@@ -1,16 +1,6 @@
-import { UserRepository } from "./user.repository";
-import { VendorRepository } from "./vendor.repository";
-import { EmployeeRepository } from "./employee.repository";
-import { CustomerRepository } from "./customer.repository";
+import { UserRepository } from './user.repository';
+import { OrderRepsoitory } from './order.repository';
+export const repositories = [UserRepository, OrderRepsoitory];
 
-export const repositories = [
-    UserRepository,
-    VendorRepository,
-    EmployeeRepository,
-    CustomerRepository
-];
-
+export * from './order.repository';
 export * from './user.repository';
-export * from './vendor.repository';
-export * from './employee.repository';
-export * from './customer.repository';

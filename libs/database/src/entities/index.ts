@@ -1,17 +1,7 @@
-import { UserEntity } from "./user.entity";
-import { VendorEntity } from "./vendor.entity";
-import { EmployeeEntity } from "./employee.entity";
-import { CustomerEntity } from "./customer.entity";
+import { UserEntity } from './user.entity';
+import { OrderEntity } from './order.entity';
 
-
-export const entities = [
-    UserEntity,
-    VendorEntity,
-    EmployeeEntity,
-    CustomerEntity
-];
+export const entities = [UserEntity, OrderEntity];
 
 export * from './user.entity';
-export * from './vendor.entity';
-export * from './employee.entity';
-export * from './customer.entity';
+export * from './order.entity';

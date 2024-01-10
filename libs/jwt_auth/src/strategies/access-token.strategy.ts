@@ -10,9 +10,7 @@ type JwtPayload = {
 
 @Injectable()
 export class AccessTokenStrategy extends PassportStrategy(Strategy, 'jwt') {
-  constructor(
-    private readonly userRepository: UserRepository
-  ) {
+  constructor(private readonly userRepository: UserRepository) {
     super({
       jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
       secretOrKey: process.env.JWT_ACCESS_SECRET,
@@ -21,13 +19,13 @@ export class AccessTokenStrategy extends PassportStrategy(Strategy, 'jwt') {
   }
 
   async validate(payload: JwtPayload) {
-    const { sub: userId, username } = payload;
+    const { sub: user_Id, username } = payload;
 
-    const user = await this.userRepository.findByEmail(username);
+    const user = await this.userRepository.findByPhone(username);
 
     if (!user) {
       throw new UnauthorizedException();
     }
     return payload;
   }
-} 
+}

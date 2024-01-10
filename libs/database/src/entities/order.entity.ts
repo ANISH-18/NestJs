@@ -1,4 +1,3 @@
-import { Exclude } from 'class-transformer';
 import {
   BaseEntity,
   Column,
@@ -8,17 +7,31 @@ import {
   UpdateDateColumn,
 } from 'typeorm';
 
-@Entity('user')
-export class UserEntity extends BaseEntity {
+@Entity('order')
+export class OrderEntity extends BaseEntity {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
   @Column({
     type: 'varchar',
-    name: 'name',
+    name: 'user_id',
     nullable: true,
   })
-  name: string;
+  user_id: string;
+
+  @Column({
+    type: 'varchar',
+    name: 'order_name',
+    nullable: true,
+  })
+  orderName: string;
+
+  @Column({
+    type: 'varchar',
+    name: 'sub_total',
+    nullable: true,
+  })
+  subTotal: string;
 
   @Column({
     type: 'varchar',
@@ -26,13 +39,6 @@ export class UserEntity extends BaseEntity {
     nullable: true,
   })
   phoneNumber: string;
-
-  @Column({
-    type: 'varchar',
-    name: 'password',
-    nullable: false,
-  })
-  password: string;
 
   /*
    * Create and Update Date Columns

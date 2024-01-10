@@ -1,5 +1,5 @@
 {
-  "name": "delta_lab_backend",
+  "name": "voosha_assignment",
   "version": "0.0.1",
   "description": "",
   "author": "",
@@ -20,7 +20,7 @@
     "test:e2e": "jest --config ./test/jest-e2e.json",
     "typeorm": "node --require ts-node/register ./node_modules/typeorm/cli.js ",
     "migration": "yarn run build && yarn run typeorm -d libs/database/src/datasource.ts  migration:run",
-    "migration:generate": "yarn run typeorm migration:generate ./libs/database/src/migrations -d ./libs/database/src/datasource.ts",
+    "migration:generate": "yarn run typeorm migration:generate  -d ./libs/database/src/datasource.ts",
     "migration:create": "yarn run typeorm migration:create",
     "migration:revert": "yarn run typeorm -d libs/database/src/datasource.ts  migration:revert",
     "create-entity": "yarn run typeorm entity:create"
